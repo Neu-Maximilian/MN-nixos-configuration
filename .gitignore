@@ -1,0 +1,3 @@
+.secret/
+flake.lock
+hosts/asus-laptop/custom/vpn.nix
