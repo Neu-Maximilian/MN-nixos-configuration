@@ -6,6 +6,5 @@
     ./info-fetchers.nix
     ./mac-randomize.nix
     ./terminal-utils.nix
-    ./theme.nix
   ];
 }

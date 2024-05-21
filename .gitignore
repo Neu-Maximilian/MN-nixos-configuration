@@ -1,3 +1,2 @@
-.secret/
 flake.lock
-hosts/asus-laptop/custom/.secrets
+.secrets/

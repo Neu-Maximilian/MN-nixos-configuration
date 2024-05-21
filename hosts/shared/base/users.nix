@@ -1,12 +1,11 @@
 {
   pkgs,
-  username,
   ...
 }: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
+  users.users."maximiliann" = {
     isNormalUser = true;
-    description = "${username}'s account";
+    description = "maximiliann's account";
     extraGroups = ["networkmanager" "input" "wheel" "video" "audio" "tss" "libvirtd" "adbusers"];
     shell = pkgs.fish;
   };

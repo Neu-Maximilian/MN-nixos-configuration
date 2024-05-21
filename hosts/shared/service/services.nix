@@ -1,6 +1,5 @@
 {
   pkgs,
-  username,
   ...
 }: {
   # Custom
@@ -34,9 +33,9 @@
   # Enable Syncthing
   services.syncthing = {
     enable = true;
-    user = "${username}";
-    dataDir = "/home/${username}/.config";
-    configDir = "/home/${username}/.config/syncthing";
+    user = "maximiliann";
+    dataDir = "/home/maximiliann/.config";
+    configDir = "/home/maximiliann/.config/syncthing";
   };
 
   environment.systemPackages = with pkgs; [

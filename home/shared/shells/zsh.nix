@@ -8,7 +8,7 @@
         history.path = "$HOME/.hisfile";
 
         # Plugins
-        enableAutosuggestions = true;
+        autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
 
         initExtra = ''

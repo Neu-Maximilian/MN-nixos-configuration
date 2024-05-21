@@ -10,7 +10,11 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  let
+    wifiAdapter = "wlp2s0";
+  in
+  {
 
     # System configuration
     # Available through 'nixos-rebuild switch --flake .#username@hostname'
@@ -20,6 +24,7 @@
 
         specialArgs = {
           inherit nixpkgs home-manager;
+          inherit wifiAdapter;
         };
 
         modules = [

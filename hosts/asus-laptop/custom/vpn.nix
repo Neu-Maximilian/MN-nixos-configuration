@@ -11,7 +11,7 @@ in
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       # Get this from a secret file in .secrets/wireguard-client.toml
       
-      ips = [ config.ips ];
+      ips = config.ips;
       listenPort = 51820; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
 
       # Path to the private key file.
