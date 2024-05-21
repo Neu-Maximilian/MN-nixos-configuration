@@ -44,7 +44,7 @@ sudo rm -rf /etc/nixos/*
 
 # Copy the configuration files to /etc/nixos
 current_dir=$(dirname $0)
-sudo cp -r $current_dir /etc/nixos
+sudo cp -r --exclude=.git $current_dir /etc/nixos
 
 # Change the owner of the copied files to root
 sudo chown -R root:root /etc/nixos

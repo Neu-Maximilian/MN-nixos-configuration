@@ -47,7 +47,7 @@
     libsForQt5.kdenlive # video editor
     olive-editor        # new and promising video editor
     obs-studio          # recording
-    gimp-with-plugins   # image editor
+    gimp   # image editor
     rawtherapee         # RAW image editor
 
     # Gaming
