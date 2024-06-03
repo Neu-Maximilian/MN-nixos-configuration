@@ -44,7 +44,7 @@ sudo rm -rf /etc/nixos/*
 
 # Copy the configuration files to /etc/nixos
 current_dir=$(dirname $0)
-sudo cp -r --exclude=.git $current_dir /etc/nixos
+sudo rsync -r --exclude .git $current_dir /etc/nixos
 
 # Change the owner of the copied files to root
 sudo chown -R root:root /etc/nixos
@@ -58,7 +58,7 @@ if [ "$verbose" = "--verbose" ]; then
 else
   sudo nixos-rebuild switch --flake .#$system_config --impure
 fi
-sudo home-manager switch --flake .#$home_config
+home-manager switch --flake .#$home_config
 
 # Exit with the exit code of the last command
 exit $?

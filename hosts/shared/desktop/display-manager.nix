@@ -16,8 +16,8 @@
   */
 
   # Enable sddm for wayland
-  #services.xserver.displayManager.sddm = {
-  #  enable = true;
-  #  wayland.enable = true;
-  #};
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 }

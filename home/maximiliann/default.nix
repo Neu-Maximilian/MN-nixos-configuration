@@ -59,10 +59,15 @@
 
     # Graphics
     mesa-demos          # opengl and lots of tests
+    
+    # Browsers
+    firefox
+    ungoogled-chromium
 
+    # Code editors
+    vscode-fhs
  ];
-
-  # Allow unfree software
+  
   nixpkgs.config.allowUnfree = true;
 
   # This value determines the home Manager release that your
@@ -76,6 +81,6 @@
   home.stateVersion = "23.11";
 
   # Let home Manager install and manage itself.
-  # programs.home-manager.enable = true;
+  #programs.home-manager.enable = true;
 
 }

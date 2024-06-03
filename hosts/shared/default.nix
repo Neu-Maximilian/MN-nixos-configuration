@@ -4,5 +4,6 @@
     ./base
     ./desktop
     ./service
+    ./programs.nix
   ];
 }
