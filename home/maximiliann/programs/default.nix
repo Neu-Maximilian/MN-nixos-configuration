@@ -25,6 +25,7 @@
     # Office
     libreoffice
     zathura
+    thunderbird
 
     # Communication
     discord
