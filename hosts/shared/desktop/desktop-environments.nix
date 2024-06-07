@@ -4,7 +4,7 @@
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable KDE Plasma
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable Pantheon Desktop
