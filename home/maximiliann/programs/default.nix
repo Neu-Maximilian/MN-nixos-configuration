@@ -21,6 +21,13 @@
     gimp   # image editor
     rawtherapee         # RAW image editor
 
+    # Office
+    libreoffice
+    zathura
+
+    # Communication
+    discord
+
     # Gaming
     steam
     wineWowPackages.stable
