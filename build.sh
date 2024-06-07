@@ -4,6 +4,7 @@
 home_config=$1
 system_config=$2
 verbose=$3
+bootloader=$4
 
 # List of home configurations
 home_configs="maximiliann "
@@ -52,13 +53,30 @@ sudo chown -R root:root /etc/nixos
 # Cd to /etc/nixos
 cd /etc/nixos
 
-# Rebuild the system configuration and switch to the home configuration
+# Check if both flags are provided, set an error message if both are provided
+if [ "$verbose" = "--verbose" ] && [ "$3" = "--rebuild-bootloader" ]; then
+  echo "Error: --verbose and --rebuild-bootloader flags cannot be used together."
+  exit 1
+fi
+
+# Rebuild the system configuration
 if [ "$verbose" = "--verbose" ]; then
-  sudo nixos-rebuild switch --flake .#$system_config --show-trace
+  echo "Rebuilding system configuration..."
+  sudo nixos-rebuild switch --flake .#$system_config --show-trace --impure
 else
+  echo "Rebuilding system configuration..."
   sudo nixos-rebuild switch --flake .#$system_config --impure
 fi
+
+# Switch to the home configuration
+echo "Switching to home configuration..."
 home-manager switch --flake .#$home_config
+
+# If the --bootloader flag is provided, rebuild the bootloader
+if [ "$bootloader" = "-bootloader" ]; then
+  echo "Rebuilding bootloader..."
+  sudo nixos-rebuild --install-bootloader boot --flake .#$system_config --impure
+fi
 
 # Exit with the exit code of the last command
 exit $?
