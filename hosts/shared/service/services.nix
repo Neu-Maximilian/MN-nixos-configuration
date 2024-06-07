@@ -3,9 +3,6 @@
   ...
 }: {
   # Custom
-  services.zammad = {
-    enable = true;
-  };
 
   # Systemd services setup
   systemd.packages = with pkgs; [
