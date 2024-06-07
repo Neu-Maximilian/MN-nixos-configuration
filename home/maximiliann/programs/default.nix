@@ -12,6 +12,7 @@
     btop          # System monitor
     ncdu          # Analyze disk usage 
     virt-viewer   # Virtual machine viewer
+    starship      # Shell prompt
 
     # Media editing
     audacity            # audio
