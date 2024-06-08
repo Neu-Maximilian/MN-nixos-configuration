@@ -16,7 +16,7 @@ let
 
 in
 {
-  programs.neovim = { 
+  programs.neovim = {
 
     enable = true;
     defaultEditor = true;
@@ -27,19 +27,19 @@ in
     # https://github.com/m15a/nixpkgs-vim-extra-plugins
     # https://github.com/NixNeovim/NixNeovimPlugins
     plugins = with pkgs.vimPlugins; [
-      nvim-tree-lua         # Directory tree
-      vim-startify          # Fancy start screen
-      nerdtree              # Another Directory tree
-      surround-nvim         # Shortcut to surround a work with char
-      syntastic             # Code syntax checking for a lot of languages
-      YouCompleteMe         # Code completition for most languages
-      vim-airline           # Bottom bar with some informations
-      emmet-vim             # Amazing html completition
-      telescope-zoxide      # Fuzzy finder
-      fine-cmdline          # Better looking command line
-      nvim-colorizer-lua    # Show hex colors immediately
-      gitsigns-nvim         # Hilight text changed from last commit
-      copilot-vim           # Github's AI assistant
+      nvim-tree-lua # Directory tree
+      vim-startify # Fancy start screen
+      nerdtree # Another Directory tree
+      surround-nvim # Shortcut to surround a work with char
+      syntastic # Code syntax checking for a lot of languages
+      YouCompleteMe # Code completition for most languages
+      vim-airline # Bottom bar with some informations
+      emmet-vim # Amazing html completition
+      telescope-zoxide # Fuzzy finder
+      fine-cmdline # Better looking command line
+      nvim-colorizer-lua # Show hex colors immediately
+      gitsigns-nvim # Hilight text changed from last commit
+      copilot-vim # Github's AI assistant
     ];
 
     extraConfig = ''
@@ -56,7 +56,7 @@ in
 
 
     '';
-    
+
     # Add this to enamble ycm
     # let g:ycm_show_diagnostics_ui = 0
 
@@ -69,10 +69,10 @@ in
 
   # YCM Settings for C/C++
   home.file.".ycm_extra_conf.py" = {
-    
-      # Overwrite the file
-      force = true;
-      text = ''
+
+    # Overwrite the file
+    force = true;
+    text = ''
 
    def Settings(**kwargs):
     return {
@@ -80,7 +80,7 @@ in
     }   
 
       '';
-    };
+  };
 
 
 }

@@ -1,29 +1,29 @@
 { pkgs, ... }:
 
 {
-    programs.zsh = {
-        enable = true;
-        enableCompletion = true;
-        history.size = 1000;
-        history.path = "$HOME/.hisfile";
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    history.size = 1000;
+    history.path = "$HOME/.hisfile";
 
-        # Plugins
-        autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
+    # Plugins
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
-        initExtra = ''
-             unsetopt BEEP
-             setopt hist_ignore_all_dups
+    initExtra = ''
+      unsetopt BEEP
+      setopt hist_ignore_all_dups
 
-             alias sn="shutdown now"
-             alias launchpad-app="/home/santo/Documents/launchpad-app-launcher/out &"
-        '';
+      alias sn="shutdown now"
+      alias launchpad-app="/home/santo/Documents/launchpad-app-launcher/out &"
+    '';
 
 
-        oh-my-zsh = {
-            enable = true;
-            plugins = [ "git" ];
-            theme = "agnoster";
-        };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "agnoster";
     };
+  };
 }

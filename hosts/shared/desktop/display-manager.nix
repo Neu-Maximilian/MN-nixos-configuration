@@ -4,7 +4,7 @@
   # Display Manager ----------
   # Enable Greetd
   /*
-  services.greetd = {
+    services.greetd = {
     enable = true;
     settings = rec {
       initial_session = {
@@ -12,7 +12,7 @@
       };
       default_session = initial_session;
     };
-  };
+    };
   */
 
   # Enable sddm for wayland

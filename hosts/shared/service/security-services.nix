@@ -8,7 +8,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  
+
   # Fingerprint reader
   services.fprintd = {
     enable = true;
@@ -31,7 +31,7 @@
     ];
   };
   services.fail2ban.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
   security.polkit.enable = true;
   programs.browserpass.enable = true;
   services.clamav = {
@@ -42,7 +42,7 @@
   };
   programs.firejail = {
     enable = true;
-    wrappedBinaries = { 
+    wrappedBinaries = {
       mpv = {
         executable = "${lib.getBin pkgs.mpv}/bin/mpv";
         profile = "${pkgs.firejail}/etc/firejail/mpv.profile";
@@ -62,9 +62,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vulnix       #scan command: vulnix --system
-    clamav       #scan command: sudo freshclam; clamscan [options] [file/directory/-]
-    chkrootkit   #scan command: sudo chkrootkit
+    vulnix #scan command: vulnix --system
+    clamav #scan command: sudo freshclam; clamscan [options] [file/directory/-]
+    chkrootkit #scan command: sudo chkrootkit
 
     # passphrase2pgp
     pass-wayland

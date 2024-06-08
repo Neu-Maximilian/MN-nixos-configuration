@@ -69,6 +69,5 @@ in
     group = "zammad";
   };
 
-  users.groups.zammad = {
-  };
+  users.groups.zammad = { };
 }

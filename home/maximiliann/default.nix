@@ -6,8 +6,8 @@
   home.homeDirectory = "/home/maximiliann";
 
   imports = [
-    ../shared       # Shared configs
-    ./programs      # Various applications
+    ../shared # Shared configs
+    ./programs # Various applications
     # ./dev           # dev configs
   ];
 
@@ -28,7 +28,7 @@
   #  "Xcursor.size" = 16;
   #  "Xft.dpi" = 172;
   #};
-  
+
   nixpkgs.config.allowUnfree = true;
 
   # This value determines the home Manager release that your
