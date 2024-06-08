@@ -13,6 +13,7 @@
     ncdu          # Analyze disk usage 
     virt-viewer   # Virtual machine viewer
     starship      # Shell prompt
+    openssl       # SSL/TLS toolkit
 
     # Media editing
     audacity            # audio

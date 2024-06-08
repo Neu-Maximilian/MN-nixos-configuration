@@ -1,15 +1,18 @@
 { config, pkgs, ... }:
 
 let
-  zammadDbPassword = "your-database-password"; # Replace with a secure password
+  zammadDbPasswordFile = "/etc/zammad/db_password"; # openssl rand -hex 22 | sudo tee -a /etc/zammad/db_password >> /dev/null && sudo chown zammad:zammad /etc/zammad/db_password && sudo chmod 600 /etc/zammad/db_password
+  zammadSecretFile = "/etc/zammad/secret_key_base_file"; # openssl rand -hex 64 | sudo tee -a /etc/zammad/secret_key_base_file >> /dev/null && sudo chown zammad:zammad /etc/zammad/secret_key_base_file && sudo chmod 600 /etc/zammad/secret_key_base_file
+  zammadDbPassword = builtins.readFile zammadDbPasswordFile;
 in
 {
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_12; # Use the appropriate version
-    dataDir = "/var/lib/postgresql";
+    dataDir = "/var/lib/postgresql/12/zammad";
     authentication = '' # Add this to allow password authentication
       local   all             postgres                                peer
+      local   all             zammad_user                             md5
       host    all             all             127.0.0.1/32            md5
       host    all             all             ::1/128                 md5
     '';
@@ -24,7 +27,7 @@ in
     enable = true;
     package = pkgs.zammad;
 
-    host = "0.0.0.0";
+    host = "127.0.0.1";
     port = 3000;
     websocketPort = 6042;
 
@@ -32,7 +35,7 @@ in
 
     # Redis configuration
     redis = {
-      host = "127.0.0.1"; # Assuming Redis is local
+      host = "localhost";
       port = 6379;
       name = "zammad-redis";
       createLocally = true;
@@ -40,20 +43,16 @@ in
 
     # Database configuration
     database = {
-      host = "127.0.0.1";
       port = 5432;
+      host = "/run/postgresql";
       name = "zammad";
       user = "zammad_user";
-      type = "postgresql";
-      settings = {
-        pool = 5;
-        timeout = 5000;
-      };
-      passwordFile = "/etc/zammad/db_password";
+      type = "PostgreSQL";
+      passwordFile = zammadDbPasswordFile;
       createLocally = false;
     };
 
-    secretKeyBaseFile = "/etc/zammad/secret_key_base";
+    secretKeyBaseFile = zammadSecretFile;
 
     openPorts = true;
   };
@@ -61,30 +60,15 @@ in
   # Ensure the required files are in place
   systemd.tmpfiles.rules = [
     "d /var/lib/zammad 0755 zammad zammad -"
-    "f /etc/zammad/secret_key_base 0600 root root -"
-    "f /etc/zammad/db_password 0600 root root -"
+    "f /etc/zammad/db_password 0600 zammad zammad -"
+    "f /etc/zammad/secret_key_base_file 0600 zammad zammad -"
   ];
 
-  users.users.zammad = {
+  users.users.zammad_user = {
     isSystemUser = true;
     group = "zammad";
   };
 
-  users.groups.zammad = {};
-
-  # Example of how to specify the contents of the secret_key_base file and db_password file
-  environment.etc = {
-    "zammad/secret_key_base" = {
-      text = ''your-secret-key-base'';
-      mode = "0600";
-      owner = "root";
-      group = "root";
-    };
-    "zammad/db_password" = {
-      text = "${zammadDbPassword}";
-      mode = "0600";
-      owner = "root";
-      group = "root";
-    };
+  users.groups.zammad = {
   };
 }
