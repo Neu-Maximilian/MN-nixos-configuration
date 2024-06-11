@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 {
+  # Python 3.12
   environment.systemPackages = with pkgs; [
-    gparted
-    ventoy-full
-    dmg2img
+    python312
   ];
+
 }

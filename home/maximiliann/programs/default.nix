@@ -49,5 +49,7 @@
     # Code editors
     vscode-fhs
 
+    # 
+    ciscoPacketTracer8
   ];
 }

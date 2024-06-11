@@ -2,7 +2,7 @@
 let
   # Import the TOML file
   configTaki = builtins.fromTOML (builtins.readFile "/etc/nixos/.secrets/wireguard-client-taki.toml");
-  configNico = builtins.fromTOML (builtins.readFile "/etc/nixos/.secrets/wireguard-client-nico.toml");
+  # configNico = builtins.fromTOML (builtins.readFile "/etc/nixos/.secrets/wireguard-client-nico.toml");
 in
 {
   # Enable WireGuard
@@ -45,19 +45,19 @@ in
         }
       ];
     };
-    wg1 = {
-      ips = configNico.ips;
-      listenPort = 51820;
-      privateKey = configNico.privateKey;
-      peers = [
-        {
-          publicKey = configNico.publicKey;
-          presharedKey = configNico.presharedKey;
-          allowedIPs = configNico.allowedIPs;
-          endpoint = configNico.endpoint;
-          persistentKeepalive = 25;
-        }
-      ];
-    };
+    # wg1 = {
+    #   ips = configNico.ips;
+    #   listenPort = 51820;
+    #   privateKey = configNico.privateKey;
+    #   peers = [
+    #     {
+    #       publicKey = configNico.publicKey;
+    #       presharedKey = configNico.presharedKey;
+    #       allowedIPs = configNico.allowedIPs;
+    #       endpoint = configNico.endpoint;
+    #       persistentKeepalive = 25;
+    #     }
+    #   ];
+    # };
   };
 }
