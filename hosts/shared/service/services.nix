@@ -2,7 +2,8 @@
 , ...
 }: {
   # Custom
-
+  # services.teamviewer.enable = true;
+  
   # Systemd services setup
   systemd.packages = with pkgs; [
     auto-cpufreq

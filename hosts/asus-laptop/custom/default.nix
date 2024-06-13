@@ -6,5 +6,6 @@
     ./swap.nix
     # ./zammad.nix
     ./tailscale.nix
+    ./wordpress.nix
   ];
 }

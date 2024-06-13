@@ -48,6 +48,7 @@
 
     # Code editors
     vscode-fhs
+    teamviewer
 
     # 
     ciscoPacketTracer8
