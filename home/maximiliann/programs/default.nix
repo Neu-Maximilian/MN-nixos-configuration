@@ -28,6 +28,7 @@
     libreoffice
     zathura
     thunderbird
+    scribus
 
     # Communication
     discord
