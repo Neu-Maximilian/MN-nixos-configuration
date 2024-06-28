@@ -53,5 +53,6 @@
 
     # 
     ciscoPacketTracer8
+    wireshark
   ];
 }
