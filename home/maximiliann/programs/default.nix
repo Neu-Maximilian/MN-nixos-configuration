@@ -23,6 +23,7 @@
     obs-studio # recording
     gimp # image editor
     rawtherapee # RAW image editor
+    ocrmypdf
 
     # Office
     libreoffice
