@@ -47,6 +47,7 @@
     # Browsers
     firefox
     ungoogled-chromium
+    microsoft-edge
 
     # Code editors
     vscode-fhs
