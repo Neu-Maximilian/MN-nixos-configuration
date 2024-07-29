@@ -54,7 +54,7 @@
     teamviewer
 
     # 
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
     wireshark
   ];
 }

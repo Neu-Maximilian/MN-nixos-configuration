@@ -31,7 +31,7 @@
   services.syncthing = {
     enable = true;
     user = "maximiliann";
-    dataDir = "/home/maximiliann/.config";
+    dataDir = "/home/maximiliann/documents";
     configDir = "/home/maximiliann/.config/syncthing";
   };
 

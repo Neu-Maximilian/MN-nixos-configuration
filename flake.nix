@@ -12,10 +12,9 @@
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
-      wifiAdapter = "wlp2s0";
+      wifiAdapter = "wlp1s0";
     in
     {
-
       # System configuration
       # Available through 'nixos-rebuild switch --flake .#username@hostname'
       nixosConfigurations = {
@@ -29,6 +28,26 @@
 
           modules = [
             ./hosts/asus-laptop
+            ./hosts/shared
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.maximiliann = import ./home/maximiliann;
+            }
+          ];
+        };
+
+       "me-262" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = {
+            inherit nixpkgs home-manager;
+            inherit wifiAdapter;
+          };
+
+          modules = [
+            ./hosts/blackview
             ./hosts/shared
             home-manager.nixosModules.home-manager
             {

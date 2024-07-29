@@ -34,12 +34,12 @@
   security.pam.services.swaylock = { };
   security.polkit.enable = true;
   programs.browserpass.enable = true;
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
-    updater.interval = "daily"; #man systemd.time
-    updater.frequency = 12;
-  };
+  #services.clamav = {
+  #  daemon.enable = true;
+  #  updater.enable = true;
+  #  updater.interval = "daily"; #man systemd.time
+  #  updater.frequency = 12;
+  #};
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
