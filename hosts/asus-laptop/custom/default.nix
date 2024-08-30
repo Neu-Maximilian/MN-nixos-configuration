@@ -6,6 +6,7 @@
     ./swap.nix
     # ./zammad.nix
     ./tailscale.nix
+    # ./netbird.nix
     # ./wordpress.nix
   ];
 }

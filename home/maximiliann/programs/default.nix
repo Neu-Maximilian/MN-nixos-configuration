@@ -30,6 +30,7 @@
     zathura
     thunderbird
     scribus
+    logseq
 
     # Communication
     discord

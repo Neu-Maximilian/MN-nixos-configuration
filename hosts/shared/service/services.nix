@@ -26,6 +26,8 @@
   services.fwupd.enable = true;
   services.auto-cpufreq.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  programs.adb.enable = true;
+
 
   # Enable Syncthing
   services.syncthing = {
