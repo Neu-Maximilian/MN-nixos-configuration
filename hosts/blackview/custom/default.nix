@@ -7,5 +7,7 @@
     # ./zammad.nix
     #./tailscale.nix
     # ./wordpress.nix
+    ./netbird.nix
   ];
 }
+

@@ -5,5 +5,6 @@
     gparted
     ventoy-full
     dmg2img
+    krdc
   ];
 }

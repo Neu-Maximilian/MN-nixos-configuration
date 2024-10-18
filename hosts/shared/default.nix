@@ -1,6 +1,7 @@
 {
   imports = [
     ./scripts
+    ./service
     ./base
     ./desktop
     ./service

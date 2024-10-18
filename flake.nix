@@ -12,7 +12,7 @@
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
-      wifiAdapter = "wlp2s0";
+      wifiAdapter = "wlp1s0";
     in
     {
       # System configuration
