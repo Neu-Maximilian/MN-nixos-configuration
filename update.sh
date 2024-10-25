@@ -8,7 +8,7 @@ flags=$3
 # List of home configurations
 home_configs="maximiliann "
 # List of system configurations
-system_configs="bf-109 "
+system_configs="bf-109 me-262"
 
 # Check if both arguments are provided
 if [ -z "$home_config" ] || [ -z "$system_config" ]; then
