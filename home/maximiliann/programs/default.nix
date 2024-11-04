@@ -54,8 +54,8 @@
     vscode-fhs
     teamviewer
 
-    # 
-    #ciscoPacketTracer8
+    # Networking
+    ciscoPacketTracer8
     wireshark
   ];
 }
