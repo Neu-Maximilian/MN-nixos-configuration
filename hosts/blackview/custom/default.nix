@@ -1,11 +1,11 @@
 {
   imports = [
     #./nvidia.nix
-    #./vpn.nix
+    ./vpn.nix
     # ./storage.nix
     ./swap.nix
     # ./zammad.nix
-    #./tailscale.nix
+    ./tailscale.nix
     # ./wordpress.nix
     ./netbird.nix
   ];

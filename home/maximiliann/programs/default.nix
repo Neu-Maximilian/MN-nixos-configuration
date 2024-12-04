@@ -6,7 +6,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-
     # System Administration
     powertop # Power management
     btop # System monitor
@@ -30,32 +29,27 @@
     zathura
     thunderbird
     scribus
-    logseq
 
-    # Communication
-    discord
-
-    # Gaming
-    steam
+    # Windows
     wineWowPackages.stable
     winetricks
-    # Games
-    osu-lazer
 
     # Graphics
     mesa-demos # opengl and lots of tests
 
     # Browsers
-    firefox
-    ungoogled-chromium
-    microsoft-edge
+    floorp
+    google-chrome
 
     # Code editors
     vscode-fhs
-    teamviewer
+    github-desktop
 
     # Networking
     ciscoPacketTracer8
     wireshark
+
+    # Security
+    keepassxc
   ];
 }

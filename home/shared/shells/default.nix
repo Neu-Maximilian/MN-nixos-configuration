@@ -6,6 +6,6 @@
     ./alacritty.nix
     ./kitty.nix
     ./zsh.nix
-    ./fhs.nix
+    # ./fhs.nix
   ];
 }

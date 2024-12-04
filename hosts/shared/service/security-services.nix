@@ -75,8 +75,5 @@
     passExtensions.pass-import
     passExtensions.pass-audit
     tomb
-
-    # Password Manager
-    keepassxc
   ];
 }

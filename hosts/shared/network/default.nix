@@ -1,7 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
-    ./dns.nix
+    # ./dns.nix
     ./firewall.nix
     ./networking.nix
     ./open-ssh.nix
