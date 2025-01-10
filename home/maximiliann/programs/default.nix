@@ -48,8 +48,12 @@
     # Networking
     ciscoPacketTracer8
     wireshark
+    putty
 
     # Security
     keepassxc
+
+    # Social
+    telegram-desktop
   ];
 }

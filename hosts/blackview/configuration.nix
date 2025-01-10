@@ -11,25 +11,12 @@
 
 {
   # --------------------------- Set-up the system -------------------------- #
-  # I don't know if I need this or not
-  # boot.kernelModules = [ "fuse" ];
   networking.hostName = "me-262";
 
-  networking.networkmanager.enable = true;
 
-  # Enable the X11 windowing system.
-  /*
-    services.xserver.enable = true;
-
-    # Configure keymap in X11
-    services.xserver = {
-    layout = "it";
-    xkbVariant = "";
-    };
-  */
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  
+  virtualisation.waydroid.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

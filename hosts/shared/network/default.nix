@@ -3,7 +3,7 @@
     ./bluetooth.nix
     # ./dns.nix
     ./firewall.nix
-    ./networking.nix
+    # ./networking.nix
     ./open-ssh.nix
     ./printing.nix
   ];

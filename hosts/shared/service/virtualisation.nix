@@ -3,7 +3,6 @@
   virtualisation.libvirtd.enable = true;
 
   # Enable Waydroid
-  virtualisation.waydroid.enable = true;
 
   # Enable Podman
   virtualisation = {
